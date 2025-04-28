@@ -26,5 +26,27 @@
 - Also used `getopts` to make the script more organized and flexible.
 
 
+## Question 2 :
+## Verify DNS Resolution:
+`` dig internal.example.com ``
+`` dig @8.8.8.8 internal.example.com ``
+i found that the server can't be reached using DNS or 8.8.8.8 
+
+## Temporary Solution:
+- Add a manual entry to /etc/hosts file :
+`` 172.21.71.213/20  internal.example.com ``
+
+## Test Local DNS Resolution
+`` ping internal.example.com ``
+it return a reply 
+
+## Test Web Service on Port 80
+`` sudo python3 -m http.server 80 ``
+the o/p is :
+`` Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ... ``
+
+## Test HTTP Response via curl
+`` curl http://internal.example.com ``
+
 
 
